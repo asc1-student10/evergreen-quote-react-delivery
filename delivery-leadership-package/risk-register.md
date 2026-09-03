@@ -1,15 +1,14 @@
 # Risk Register
 
-> Copy to `delivery-leadership-package/risk-register.md`. At least 5 rows. **No boilerplate**; your peers will grade you on whether these are real.
-
 | # | Risk | Owner | Likelihood (L/M/H) | Impact (L/M/H) | Mitigation | Trigger to escalate |
 |---|---|---|---|---|---|---|
-| R1 | _e.g., the dev server runs code the compiler rejects, so the demo "works" while the build is red_ | _name_ | M | H | _e.g., run `npm run type-check` after every assembly step, not just before merge_ | _e.g., type-check still red at 16:00 → hold the push, name it at check-in_ |
-| R2 |  |  |  |  |  |  |
-| R3 |  |  |  |  |  |  |
-| R4 |  |  |  |  |  |  |
-| R5 |  |  |  |  |  |  |
+| R1 | The dev server renders code the TypeScript compiler rejects, so a demo "works" on screen while `npm run build` is actually red. | Ricky Cotton | M | H | Run `npm run type-check` after every assembly step (component drop-in, config change, hook/context swap) and not just once before merge and treat a red type-check the same as a broken UI. | `npm run type-check` still fails 30+ min after an assembly step, or fails again right before an intended push. If that happens, we stop, fix or revert before doing anything else, name it at next check-in. |
+| R2 | The placeholder `BASE_RATES` values produce a monthly premium that looks obviously wrong (too high/low/negative) once the sponsor's real rate decision is applied, undermining the "believable number" promise. | Ricky Cotton | M | M | Sanity-check all three coverage types (auto/home/life) against a few manual back-of-envelope numbers right after editing `premium.ts`, before moving on to Day 3 work. | Any coverage type produces a number that's off by an order of magnitude, or a monthly premium under $10 or over a few thousand dollars → flag to sponsor at next check-in before continuing. |
+| R3 | Data feed hides the loading/error state instead of showing it, so a real network delay or bad path fails silently. | Ricky Cotton | M | M | Explicitly test the loading state and the error statee | Loading or error UI is not visibly demonstrated in a check-in / demo, or the feed silently renders an empty list with no explanation|
+| R4 |The toolchain versions in the starter kit are pinned; an accidental `npm install <pkg>@latest`, a lockfile update, or an IDE auto-fix mid-week silently bumps a dependency and breaks CI.| Ricky Cotton | L | H | Ensure team understands the risk and ensure they are checking before committing | `git diff package-lock.json` shows unexpected changes not tied to an intentional kit step → do not commit; investigate and revert before continuing. |
+| R5 | Potential of scope creep from outside stakeholders | Ricky Cotton | L | H | Delivery Lead ensures team works only what is expected and goes toward the end goal and sets expectations with stakeholders. | When any ask or issue risen is at risk of something not delivering on time. |
+| R6 | Pinned build tool flagged (moderate severity, dev-time only) by platform team's monthly audit; fix scheduled for next week's normal window. | Ricky Cotton | L | L | Ship this week on the current toolchain rather than an early bump; note the flag + remediation date in the sponsor status update. | Severity revised upward, flag turns out to affect a shipped/runtime dependency, or the fix slips past next week.
 
 ## How I'll use this register
 
-_One short paragraph. When will you re-read it? Who else can see it? What's the cadence?_
+I'll re-read and update this register at the start of every daily check-in (before status is shared with the cohort/sponsor) and again right before any push to `main`-bound branches, since that's the moment a risk turning real is most expensive to discover late. It lives in `delivery-leadership-package/` in the repo, so it's visible to the instructor (sponsor) and anyone reviewing the PR — I'll call out any row whose likelihood or impact has changed, and add new rows the moment a new risk becomes concrete rather than waiting for the next scheduled review.

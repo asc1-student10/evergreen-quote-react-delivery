@@ -4,8 +4,8 @@
 **Name:** Evergreen Insurance Quote (Phase 2 React rebuild)
 **Delivery week:** 2
 **Delivery Lead:** Ricky Cotton
-**Engineering team (represented by):** 
-**GitHub Project board:** 
+**Engineering team (represented by):** [evergreen-quote-react-delivery](https://github.com/asc1-student10/evergreen-quote-react-delivery)
+**GitHub Project board:** [Project Board](https://github.com/users/asc1-student10/projects/3/views/1)
 
 ## Who is the customer?
 A first-time insurance shopper. Often a new renter or new homeowner who was just told they "need insurance". Pulling this up on their phone with no intention of committing to anything yet. They want a believable number in under a minute, without creating an account or handing over an email address. Today their alternative is a competitor's twelve-field quote form that asks for personal information before showing a single price, or simply closing the tab and moving on.

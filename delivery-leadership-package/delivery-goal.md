@@ -1,10 +1,8 @@
 # Delivery Goal: Evergreen Quote
 
-> Copy this file into `delivery-leadership-package/delivery-goal.md`. One sentence. Read it back to yourself. Then to your pair. Then to someone who wasn't in the room. If they can repeat it, it's good.
-
 ## Goal
 
-> _One sentence here._
+> By Friday, ship a working Evergreen Quote app — a visitor gets a live premium estimate for auto, home, or life and can save it to a shared recent-quotes list — merged to `main` behind a green CI build.
 
 ## "Done" looks like
 
@@ -17,4 +15,8 @@
 
 ## Out of scope (this week)
 
-- _What you are intentionally not doing._
+- No real rate engine or actuarial pricing — the rate model is a placeholder.
+- No customer accounts, persistent saved-quote storage, or email capture.
+- No payment, checkout, or policy purchase flow.
+- No back-end service — the JSON data feed stands in for the quotes API.
+- No routing, automated test suite, or production deployment beyond the green build.

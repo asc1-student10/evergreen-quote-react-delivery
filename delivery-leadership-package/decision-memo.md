@@ -1,29 +1,27 @@
-# Decision Memo: _short title here_
+# Decision Memo: Optional Stretch Work vs. Protecting Required Work
 
-> Copy to `delivery-leadership-package/decision-memo.md`. Target length: ~250 words. Write for a non-technical reader. Name the options you **rejected**, not just the one you picked.
-
-**Date:**
-**Author:** _your name_
-**Decision area:** _e.g., Day 2 scope tradeoff_
+**Date:** 2026-09-01
+**Author:** Ricky Cotton
+**Decision area:** Scope tradeoff — optional "add a prop" stretch work vs. the three required assembly issues
 
 ## Context
 
-_What was the situation that forced a choice? 2–3 sentences._
+This morning has three required issues: assembling the components into `App.tsx`, setting config values, and fixing the known type error. There's also an optional, clearly-marked stretch challenge (adding a prop to a component) available. The component assembly took longer than planned to reconcile with the marker locations, putting the required work at risk of running into the afternoon check-in with nothing shippable yet.
 
 ## Options considered
 
-1. **Option A: _name_.** _Pros / cons in plain English._
-2. **Option B: _name_.** _Pros / cons._
-3. **Option C: _name_.** _Pros / cons._ (Optional.)
+1. **Do the stretch challenge now, alongside the required issues.** Keeps the team hands-on and engaged early, but risks the required issues slipping past the check-in with no green type-check or running app to show.
+2. **Skip the stretch challenge entirely.** Guarantees full focus on the required work, but gives up a low-cost opportunity to practice the TypeScript/React mechanics while the components are already open.
+3. **Timebox the stretch challenge to after the required issues are verified done.** Required work is protected first; the stretch challenge only happens if time remains before the check-in.
 
 ## Recommendation
 
-_Which option. One paragraph._
+Option 3: finish and verify all three required issues first (dev server running, type-check green), then spend any remaining time before the check-in on the stretch challenge.
 
 ## Why
 
-_The single most important reason, named in customer or business terms, not technical ones._
+The check-in and the sponsor only care about what's actually running and green — an unfinished stretch challenge costs nothing, but an unfinished required issue looks like the day fell behind.
 
 ## What would change my mind
 
-_If X happened by Y date, I would revisit this._
+If the required issues are verified done well before the check-in with real time to spare, I'd move the stretch challenge earlier in the day tomorrow instead of treating it as leftover time.
